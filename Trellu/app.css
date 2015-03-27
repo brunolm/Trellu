@@ -1,0 +1,21 @@
+﻿.card
+{
+    background: #ccc;
+    padding: 6px;
+    border-radius: 6px;
+    margin-bottom: 2px;
+}
+
+.cardlist
+{
+    min-height: 100px;
+    background: #eee;
+    border-radius: 6px;
+    padding: 0 10px 4px 10px;
+}
+
+    .cardlist h3
+    {
+        padding-top: 6px;
+        display: inline-block;
+    }

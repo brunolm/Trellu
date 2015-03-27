@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trellu</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="app.css" type="text/css" />
+
+    <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+    <script src="app.js"></script>
+</head>
+<body>
+    <div class="navbar navbar-inverse">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="/" class="navbar-brand">Trellu</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="/">Home</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="accept-droppable cardlist">
+                    <h3>Doing</h3>
+                    <button type="button" class="btn btn-default btn-xs">
+                        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add
+                    </button>
+                    <div class="card">
+                        I'm a card 1
+                        <button type="button" class="btn btn-default btn-xs action-time" data-ms="3600000">
+                            <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
+                            <span class="result"></span>
+                        </button>
+                        <button type="button" class="btn btn-default btn-xs action-remove">
+                            <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                        </button>
+                    </div>
+                    <div class="card">
+                        I'm a card 2
+                        <button type="button" class="btn btn-default btn-xs action-time" data-ms="15020">
+                            <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
+                            <span class="result"></span>
+                        </button>
+                        <button type="button" class="btn btn-default btn-xs action-remove">
+                            <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                        </button>
+                    </div>
+                    <div class="card">
+                        I'm a card 3
+                        <button type="button" class="btn btn-default btn-xs action-time" data-ms="0">
+                            <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
+                            <span class="result"></span>
+                        </button>
+                        <button type="button" class="btn btn-default btn-xs action-remove">
+                            <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="accept-droppable cardlist">
+                    <h3>Testing</h3>
+                    <button type="button" class="btn btn-default btn-xs">
+                        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add
+                    </button>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="accept-droppable cardlist ">
+                    <h3>Done</h3>
+                    <button type="button" class="btn btn-default btn-xs">
+                        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
