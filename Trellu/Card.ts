@@ -8,6 +8,7 @@ class Card
     public Name: string;
     public Description: string;
     public Milliseconds: number;
+    public Order: number;
 
     public ListID: string;
 
@@ -25,17 +26,18 @@ class Card
             if (!(name = prompt("Name")))
                 return;
 
-            var cardList = $(this).closest(".cardlist");
+            var cardList = $(this).closest(".cardlist").find(".drop-area");
 
             var card = new Card();
             card.ListID = $(this).closest(".list").data("id");
             card.Name = name;
             card.Description = "Test";
             card.Milliseconds = 0;
+            card.Order = cardList.find(".card").length;
 
             card.AddOrUpdate();
 
-            cardList.find(".drop-area").append(card.To$());
+            cardList.append(card.To$());
         });
 
         $(window).on("beforeunload", function (e)
@@ -48,7 +50,9 @@ class Card
 
         $(function ()
         {
-            var cards = Card.Load();
+            var cards = Card.Load().AsLinq<Card>()
+                .OrderBy(o => o.Order)
+                .ToArray();
 
             $.each(cards, function (i, e)
             {
@@ -80,8 +84,18 @@ class Card
         return cardsList;
     }
 
-    public Save(cards: any): void
+    static Save(cards: any): void
     {
+        if (cards instanceof Array)
+        {
+            var cardsHash = {};
+            $.each(cards, function (i, c)
+            {
+                cardsHash[c.ID] = c;
+            });
+            cards = cardsHash;
+        }
+
         localStorage.setItem("Cards", JSON.stringify(cards));
     }
 
@@ -100,7 +114,7 @@ class Card
         console.log(this);
         cards[this.ID] = this;
 
-        this.Save(cards);
+        Card.Save(cards);
     }
 
     public Remove(): void
@@ -109,7 +123,7 @@ class Card
 
         delete cards[this.ID];
 
-        this.Save(cards);
+        Card.Save(cards);
     }
 
     public To$(): JQuery

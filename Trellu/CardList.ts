@@ -4,6 +4,7 @@ class CardList
 {
     public ID: string;
     public Name: string;
+    public Order: number;
 
     constructor(source: any = null)
     {
@@ -27,13 +28,36 @@ class CardList
                         {
                             var listID = $(this).closest(".list").data("id");
 
+                            var index = ui.item.index();
+
                             var cards = Card.Load();
 
                             var card = cards.AsLinq<Card>().Single(o => o.ID == cardID);
 
                             card.ListID = listID;
+                            card.Order = index;
 
                             new Card(card).AddOrUpdate();
+
+                            var order = 0;
+                            cards = Card.Load().AsLinq<Card>()
+                                .Select(o => 
+                            {
+                                if (o.ListID == listID && o.ID != card.ID)
+                                {
+                                    if (order == index)
+                                    {
+                                        ++order;
+                                    }
+
+                                    o.Order = order;
+                                    ++order;
+                                }
+
+                                return new Card(o);
+                            }).ToArray();
+
+                            Card.Save(cards);
                         }
                     }
                 })
