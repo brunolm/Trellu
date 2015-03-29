@@ -1,21 +1,112 @@
-﻿.card
+﻿body
 {
-    background: #ccc;
-    padding: 6px;
-    border-radius: 6px;
-    margin-bottom: 2px;
+    background: #3A8CD0;
 }
+body.fixed-navbar
+{
+    padding-top: 65px;
+}
+
+@media (max-width: 979px)
+{
+    body.fixed-navbar
+    {
+        padding-top: 0px;
+    }
+}
+
+.card
+{
+    background: #fff;
+    padding: 8px;
+    padding-bottom: 12px;
+    border-radius: 6px;
+    margin-bottom: 4px;
+    cursor: pointer;
+}
+
+    .card .title
+    {
+        word-wrap: break-word;
+    }
+
+    .card .remove
+    {
+        margin-right: 15px;
+    }
+
+.list
+{
+    min-height: 500px;
+    margin-top: 5px;
+}
+    .list .header
+    {
+        overflow: hidden;
+    }
 
 .cardlist
 {
     min-height: 100px;
     background: #eee;
     border-radius: 6px;
-    padding: 0 10px 4px 10px;
+    padding: 10px;
+    padding-top: 0;
 }
 
-    .cardlist h3
+    .cardlist .list-name
     {
-        padding-top: 6px;
-        display: inline-block;
+        cursor: pointer;
+        overflow-x: hidden;
+        max-width: 100%;
+        font-weight: bold;
     }
+
+    .cardlist .list-actions
+    {
+        
+    }
+
+        .cardlist .list-actions .btn
+        {
+            margin-top: 8px;
+        }
+
+    .cardlist .drop-area
+    {
+        min-height: 30px;
+    }
+
+button .result:not(:empty)
+{
+    margin-left: 4px;
+}
+
+.navbar-nav button
+{
+    margin-top: 8px;
+}
+
+.cardlist-container
+{
+    white-space: nowrap;
+    overflow-x: auto;
+    padding-bottom: 16px;
+}
+
+    .cardlist-container > div
+    {
+        float: none !important;
+        display: inline-block;
+        vertical-align: top;
+    }
+
+.accept-drop-started
+{
+    box-shadow: 0 0 3pt 2pt yellow;
+}
+
+.accept-drop-hover
+{
+    box-shadow: 0 0 0 2pt yellow;
+}

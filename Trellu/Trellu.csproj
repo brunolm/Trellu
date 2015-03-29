@@ -23,9 +23,14 @@
     <Content Include="web.config" />
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Include="app.ts" />
+    <TypeScriptCompile Include="Button.ts" />
+    <TypeScriptCompile Include="Card.ts" />
+    <TypeScriptCompile Include="CardList.ts" />
+    <TypeScriptCompile Include="DateTime.ts" />
     <TypeScriptCompile Include="Definitions\jQueryui.d.ts" />
     <TypeScriptCompile Include="Definitions\jQuery.d.ts" />
+    <TypeScriptCompile Include="Guid.ts" />
+    <TypeScriptCompile Include="Linq.ts" />
   </ItemGroup>
   <ItemGroup>
     <None Include="web.Debug.config">
@@ -64,6 +69,7 @@
   <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
     <TypeScriptRemoveComments>false</TypeScriptRemoveComments>
     <TypeScriptSourceMap>true</TypeScriptSourceMap>
+    <TypeScriptOutFile>all.js</TypeScriptOutFile>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)' == 'Release'">
     <TypeScriptRemoveComments>true</TypeScriptRemoveComments>
