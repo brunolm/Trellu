@@ -190,8 +190,14 @@ class Card
 
                 $(this).find(".result").html(DateTime.Format(ms));
 
-                self.Milliseconds = ms;
-                self.AddOrUpdate();
+                var card = Card.Load().AsLinq<Card>().FirstOrDefault(o => o.ID == self.ID);
+                if (card)
+                    card = new Card(card);
+
+                card = card || self;
+
+                card.Milliseconds = ms;
+                card.AddOrUpdate();
 
                 console.log("Total ms: ", ms, DateTime.Format(ms));
             }
