@@ -41,6 +41,7 @@ class CardList
 
                             var order = 0;
                             cards = Card.Load().AsLinq<Card>()
+                                .OrderBy(o => o.Order)
                                 .Select(o => 
                             {
                                 if (o.ListID == listID && o.ID != card.ID)
@@ -168,7 +169,7 @@ class CardList
         var self = this;
 
         var cardListContainer = $("<div>")
-            .addClass("col-md-4 col-lg-3 col-xs-5 list")
+            .addClass("list")
             .data("id", self.ID);
 
         var cardList = $("<div>")

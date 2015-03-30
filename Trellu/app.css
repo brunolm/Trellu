@@ -2,10 +2,11 @@
 {
     background: #3A8CD0;
 }
-body.fixed-navbar
-{
-    padding-top: 65px;
-}
+
+    body.fixed-navbar
+    {
+        padding-top: 65px;
+    }
 
 @media (max-width: 979px)
 {
@@ -23,6 +24,8 @@ body.fixed-navbar
     border-radius: 6px;
     margin-bottom: 4px;
     cursor: pointer;
+    max-width: 300px;
+    min-height: 20px;
 }
 
     .card .title
@@ -39,7 +42,11 @@ body.fixed-navbar
 {
     min-height: 500px;
     margin-top: 5px;
+    min-width: 300px;
+    max-width: 340px;
+    padding: 0 15px;
 }
+
     .list .header
     {
         overflow: hidden;
@@ -50,8 +57,7 @@ body.fixed-navbar
     min-height: 100px;
     background: #eee;
     border-radius: 6px;
-    padding: 10px;
-    padding-top: 0;
+    padding: 0 10px 10px 10px;
 }
 
     .cardlist .list-name
@@ -64,7 +70,6 @@ body.fixed-navbar
 
     .cardlist .list-actions
     {
-        
     }
 
         .cardlist .list-actions .btn
@@ -75,6 +80,11 @@ body.fixed-navbar
     .cardlist .drop-area
     {
         min-height: 30px;
+        padding-bottom: 10px;
+    }
+    .cardlist .drop-area:hover.accept-drop-started
+    {
+        padding-bottom: 40px;
     }
 
 button .result:not(:empty)
