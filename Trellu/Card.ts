@@ -196,6 +196,7 @@ class Card
 
                 card = card || self;
 
+                self.Milliseconds = ms;
                 card.Milliseconds = ms;
                 card.AddOrUpdate();
 
